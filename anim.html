@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="canvas" width="1200" height="600"></canvas>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+
+      var inst1="MOV AX OOOOH";
+      var inst2="MOV  AL  9BH";
+      var inst3="CBW";
+
+      var regX=100;
+      var regY=300;
+      var inst1X=canvas.width/2+200;
+      var inst1Y = 260;
+
+      ctx .fillStyle = '#C0C0C0';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+
+      ctx.fillStyle='black';
+      ctx.font="40px Arial"
+      ctx.fillText('CBW - Convert signed Byte to signed word',canvas.width/2-350,50);
+
+      animate();
+
+      window.onload = function () {
+        setInterval(animate,10000);
+      }
+
+      function animate() {
+        ctx .fillStyle = '#C0C0C0';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        ctx.fillStyle='black';
+        ctx.font="40px Arial"
+        ctx.fillText('CBW - Convert signed Byte to signed word',canvas.width/2-350,50);
+
+        setTimeout(function functionName() {
+          ctx.fillStyle = 'white';
+          ctx.rect(regX,regY, 200, 30);
+          ctx.rect(regX+200,regY,200,30);
+          ctx.stroke();
+          ctx.fillRect(regX+1,regY+1, 198, 28);
+          ctx.fillRect(regX+201,regY+1,198,28);
+        },1500)
+
+
+        setTimeout(function functionName() {
+          ctx.fillStyle='black';
+          ctx.font="30px Arial"
+          ctx.fillText('AX',regX-50,regY+25);
+          ctx.fillText('AH',regX+50,regY-10);
+          ctx.fillText('AL',regX+250,regY-10);
+        },3000);
+
+
+
+        setTimeout(function functionName() {
+          ctx.fillStyle='black';
+          ctx.font="30px Georgia";
+          ctx.fillText(inst1,inst1X,inst1Y);
+        },4000);
+
+
+        setTimeout(function functionName() {
+          ctx.font="25px Arial";
+          ctx.fillText('0000000',regX+50,regY+25);
+          ctx.fillText('0000000',regX+250,regY+25);
+        },5000);
+
+
+        setTimeout(function functionName() {
+          ctx.fillStyle='black';
+          ctx.font="30px Georgia";
+          ctx.fillText(inst2,inst1X,inst1Y+50);
+        },6000);
+
+        setTimeout(function functionName() {
+          ctx.fillStyle = 'white';
+          ctx.fillRect(regX+201,regY+1,198,28);
+          ctx.fillStyle='black';
+          ctx.fillText('10011011',regX+250,regY+25);
+        },7000);
+
+        setTimeout(function functionName() {
+          ctx.fillStyle='black';
+          ctx.font="30px Georgia";
+          ctx.fillText(inst3,inst1X,inst1Y+100);
+        },8000);
+
+        setTimeout(function functionName() {
+          ctx.fillStyle = 'white';
+          ctx.fillRect(regX+1,regY+1, 198, 28);
+          ctx.fillStyle='black';
+          ctx.fillText('11111111',regX+50,regY+25);
+        },9000);
+      }
+
+    </script>
+  </body>
+</html>

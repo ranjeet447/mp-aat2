@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body,html{margin: 20px;}
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>CBW Instruction</h1>
+        <p>CBW converts the signed value in the AL register into an equivalent 16 bit signed value in the AX register by duplicating the sign bit to the left.</p>
+
+        <p>This instruction copies the sign of a byte in
+          AL to all the bits in AH. AH is then said to be the sign
+          extension of AL. </p>
+        <pre><h3>Example:</h3>
+             ;AX = 00000000 10011011 = - 155 decimal
+         <b>CBW</b> ;Convert signed byte in AL to signed word in
+             ;AX.
+             ;Result in AX = 11111111 10011011
+             ; = - 155 decimal
+        </pre>
+        <form action="/animation">
+            <button type="submit" name="button">Animation</button>
+        </form>
+    </div>
+
+  </body>
+</html>
